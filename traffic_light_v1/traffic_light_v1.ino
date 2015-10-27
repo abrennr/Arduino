@@ -1,9 +1,8 @@
 #include <Adafruit_NeoPixel.h>
 
-#define PIN_1 6
+#define PIN_1 12
 #define PIN_2 10
-#define PIN_3 12
- 
+#define PIN_3 6
 
 // Parameter 1 = number of pixels in strip
 // Parameter 2 = Arduino pin number (most are valid)
@@ -15,11 +14,6 @@
 Adafruit_NeoPixel strip_1 = Adafruit_NeoPixel(16, PIN_1, NEO_GRB + NEO_KHZ800);
 Adafruit_NeoPixel strip_2 = Adafruit_NeoPixel(16, PIN_2, NEO_GRB + NEO_KHZ800);
 Adafruit_NeoPixel strip_3 = Adafruit_NeoPixel(16, PIN_3, NEO_GRB + NEO_KHZ800);
-
-uint32_t red = strip_1.Color(255, 0, 0);
-uint32_t yellow = strip_2.Color(255, 255, 0);
-uint32_t green = strip_3.Color(0, 255, 0);
-
 
 void setup() {
   // top (red) light
@@ -40,17 +34,17 @@ void loop() {
   // start with green
   colorFill_1(strip_1.Color(0, 0, 0)); 
   colorFill_2(strip_2.Color(0, 0, 0)); 
-  colorFill_3(green); 
+  colorFill_3(strip_3.Color(0, 255, 0)); 
   delay(4000);
   // yellow
   colorFill_1(strip_1.Color(0, 0, 0)); 
   colorFill_3(strip_3.Color(0, 0, 0));
-  colorFill_2(yellow);  
+  colorFill_2(strip_2.Color(255, 255, 0));  
   delay(2000);
   // red
   colorFill_3(strip_3.Color(0, 0, 0)); 
   colorFill_2(strip_2.Color(0, 0, 0));
-  colorFill_1(red); 
+  colorFill_1(strip_1.Color(255, 0, 0)); 
   delay(4000);
 
 }

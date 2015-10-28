@@ -40,7 +40,7 @@ void loop() {
   colorFill_1(strip_1.Color(0, 0, 0)); 
   colorFill_3(strip_3.Color(0, 0, 0));
   colorFill_2(strip_2.Color(255, 255, 0));  
-  delay(2000);
+  delay(1500);
   // red
   colorFill_3(strip_3.Color(0, 0, 0)); 
   colorFill_2(strip_2.Color(0, 0, 0));
